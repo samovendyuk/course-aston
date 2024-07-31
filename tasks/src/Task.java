@@ -6,11 +6,11 @@ public class Task {
         checkSumSign(-1, 0);
         printColor(101);
         compareNumbers(4, 10);
-        compareScale(10, 11);
+        System.out.println(compareScale(10, 11));
         positiveOrNegative(-1);
-        checkNumber(1);
+        System.out.println(checkNumber(1));
         printString("How about this", 4);
-        isLeapYear(400);
+        System.out.println(isLeapYear(10));
         replaceNumber();
         fillArray();
         doubleNumberInArray();
@@ -48,11 +48,11 @@ public class Task {
         }
     }
 
-    public static void compareScale(int a, int b) {
+    public static boolean compareScale(int a, int b) {
         if ((a + b) >= 10 && (a + b) <= 20) {
-            System.out.println("true");
+            return true;
         } else {
-            System.out.println("false");
+            return false;
         }
     }
 
@@ -64,11 +64,11 @@ public class Task {
         }
     }
 
-    public static void checkNumber(int a) {
+    public static boolean checkNumber(int a) {
         if (a >= 0) {
-            System.out.println("false");
+            return false;
         } else {
-            System.out.println("true");
+            return true;
         }
     }
 
@@ -80,15 +80,14 @@ public class Task {
 
     public static boolean isLeapYear(int year) {
         if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                return false;
-            }
-            if (year % 400 == 0) {
-                return true;
-            }
             return true;
+        } else if (year % 400 == 0) {
+            return true;
+        } else if (year % 100 == 0) {
+            return false;
+        } else {
+            return false;
         }
-        return false;
     }
 
     public static void replaceNumber() {
