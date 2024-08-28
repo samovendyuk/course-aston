@@ -23,29 +23,31 @@ public class MTSTest {
 
     @Test
     public void testOnlinePaymentBlock() {
+
         WebElement onlinePaymentBlock = driver.findElement(By.xpath("//*[contains(text(), 'Онлайн пополнение')]"));
         Assert.isTrue(onlinePaymentBlock.isDisplayed(), "Блок 'Онлайн пополнение' не найден");
 
-        WebElement visaLogos = driver.findElement(By.xpath("img[alt='Visa']"));
+        WebElement visaLogos = driver.findElement(By.xpath("//img[@alt='Visa']"));
         Assert.isTrue(visaLogos.isDisplayed(), "Логотип платёжных систем не найдены");
 
-        WebElement verifiedByVisaLogo = driver.findElement(By.xpath("img[alt='Verified By Visa']"));
+        WebElement verifiedByVisaLogo = driver.findElement(By.xpath("//img[@alt='Verified By Visa']"));
         Assert.isTrue(verifiedByVisaLogo.isDisplayed(), "Логотип платёжных систем не найдены");
 
-        WebElement masterCardLogo = driver.findElement(By.xpath("img[alt='MasterCard']"));
+        WebElement masterCardLogo = driver.findElement(By.xpath("//img[@alt='MasterCard']"));
         Assert.isTrue(masterCardLogo.isDisplayed(), "Логотип платёжных систем не найдены");
 
-        WebElement masterCardCodeLogo = driver.findElement(By.xpath("img[alt='MasterCard Secure Code']"));
+        WebElement masterCardCodeLogo = driver.findElement(By.xpath("//img[@alt='MasterCard Secure Code']"));
         Assert.isTrue(masterCardCodeLogo.isDisplayed(), "Логотип платёжных систем не найдены");
 
-        WebElement belCard = driver.findElement(By.xpath("img[alt='Белкарт']"));
+        WebElement belCard = driver.findElement(By.xpath("//img[@alt='Белкарт']"));
         Assert.isTrue(belCard.isDisplayed(), "Логотип платёжных систем не найдены");
 
         WebElement moreInfoLink = driver.findElement(By.xpath("//a[contains(text(), 'Подробнее о сервисе')]"));
         moreInfoLink.click();
+        driver.navigate().back();
 
-        WebElement phoneInput = driver.findElement(By.xpath("input#connection-phone"));
-        WebElement button = driver.findElement(By.xpath("form#pay-connection button"));
+        WebElement phoneInput = driver.findElement(By.xpath("//input[@id='connection-phone']"));
+        WebElement button = driver.findElement(By.xpath("//form[@id='pay-connection']/button"));
         phoneInput.sendKeys("297777777");
         button.click();
     }
