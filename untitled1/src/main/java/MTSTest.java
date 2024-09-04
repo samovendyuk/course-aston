@@ -3,6 +3,7 @@ import CheckBox.Dept;
 import CheckBox.HomeInternet;
 import CheckBox.InstallmantPlan;
 import dev.failsafe.internal.util.Assert;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -21,6 +22,7 @@ public class MTSTest {
     }
 
     @Test
+    @Step ("test case 1")
     public void testOnlinePaymentBlock() {
         Communication onlinePaymentPage = new Communication(driver);
 
@@ -49,6 +51,7 @@ public class MTSTest {
     }
 
     @Test
+    @Step ("test case 2")
     public void testHomeInternetOption() {
         HomeInternet homeInternetBlock = new HomeInternet(driver);
 
@@ -61,6 +64,7 @@ public class MTSTest {
     }
 
     @Test
+    @Step ("test case 3")
     public void testDeptOption() {
         Dept deptBlock = new Dept(driver);
 
@@ -73,6 +77,7 @@ public class MTSTest {
     }
 
     @Test
+    @Step ("test case 4")
     public void testInstalmentPlan() {
         InstallmantPlan installmantPlanBlock = new InstallmantPlan(driver);
 
